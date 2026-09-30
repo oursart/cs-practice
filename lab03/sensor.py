@@ -16,7 +16,7 @@ for i in range(n):
 
 print()
 print(f'Пришло записей: {n}')
-print(f'Количество ошибок: {k}')
+print(f'Количество ошибок: {errors}')
 print(f'Записей больше порога: {max_value}')
 print(f'Максимальное значение: {round(max(lst), 1)}')
 print(f'Среднее значение: {round((sum(lst) / len(lst)), 1)}')
