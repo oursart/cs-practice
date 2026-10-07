@@ -12,3 +12,8 @@ def average(scores: list[float]) -> float:
     if len(scores) == 0:
         return 0.0
     return round(sum(scores) / len(scores), 2)
+
+def ranking(names: list[str], scores: list[float]) -> list[str]:
+    order = sorted(range(len(names)), key=lambda i: scores[i], reverse=True)
+    return [names[i] for i in order]
+
