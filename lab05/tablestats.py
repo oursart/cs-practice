@@ -34,3 +34,10 @@ def total_minutes(rows, kind):
             except ValueError:
                 pass
     return round(ans, 1)
+
+
+def to_csv(counts):
+    ans = "тип,количество\n"
+    for k in sorted(counts):
+        ans += f"{k},{counts[k]}\n"
+    return ans
