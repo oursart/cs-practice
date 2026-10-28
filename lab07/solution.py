@@ -15,3 +15,21 @@ def block(matrix, rows, columns):
         return []
     selected = array[np.ix_(rows, columns)]
     return selected.tolist()
+
+
+def column_means(matrix):
+    array = np.asarray(matrix, dtype=float)
+    if array.size == 0:
+        return []
+    means = np.mean(array, axis=0)
+    rounded = np.round(means, 6)
+    return rounded.tolist()
+
+
+def column_range(matrix, column):
+    array = np.asarray(matrix, dtype=float)
+    if array.size == 0:
+        return 0.0
+    values = array[:, column]
+    spread = np.max(values) - np.min(values)
+    return float(np.round(spread, 6))
