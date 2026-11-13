@@ -1,0 +1,65 @@
+import numpy as np
+
+hours = np.arange(0, 24, 3)
+line = np.linspace(0, 1, 5)
+zeros = np.zeros(6, dtype=int)
+unknown_table = np.full((2, 3), -1)
+identity = np.eye(3)
+
+print("hours:", hours)
+print("hours.shape:", hours.shape)
+print("hours.ndim:", hours.ndim)
+print("hours.size:", hours.size)
+print("hours.dtype:", hours.dtype)
+
+
+print("Третий элемент:", hours[2])
+print("Последний элемент:", hours[-1])
+print("Элементы с индексами 2-5:", hours[2:6])
+print("Каждый второй элемент:", hours[::2])
+print("В обратном порядке:", hours[::-1])
+
+
+
+temperatures = np.array([
+    [12, 14, 13, 15],
+    [11, 13, 16, 17],
+    [10, 12, 15, 18],
+])
+
+print("Форма (shape):", temperatures.shape)
+print("Число измерений (ndim):", temperatures.ndim)
+print("Число элементов (size):", temperatures.size)
+
+print("Вторая строка, третий столбец:", temperatures[1, 2])
+print("Первая строка:", temperatures[0])
+print("Последний столбец:", temperatures[:, -1])
+print("Первые две строки без первого столбца:\n", temperatures[:2, 1:])
+print("Центральный фрагмент 2x2:\n", temperatures[0:2, 1:3])
+
+
+
+matrix = np.arange(1, 26).reshape(5, 5)
+
+slice_rows_3 = matrix[:3, :]
+print("Первые три строки:\n", slice_rows_3)
+print("Shape:", slice_rows_3.shape)
+
+slice_rows_last2 = matrix[-2:, :]
+print("Последние две строки:\n", slice_rows_last2)
+print("Shape:", slice_rows_last2.shape)
+
+slice_cols_2 = matrix[:, :2]
+print("Первые два столбца:\n", slice_cols_2)
+print("Shape:", slice_cols_2.shape)
+
+slice_submatrix = matrix[1:4, 2:5]
+print("Строки 1-3, столбцы 2-4:\n", slice_submatrix)
+print("Shape:", slice_submatrix.shape)
+
+slice_corner = matrix[-2:, -2:]
+print("Угловой блок 2x2:\n", slice_corner)
+print("Shape:", slice_corner.shape)
+
+
+
