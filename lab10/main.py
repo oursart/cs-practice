@@ -28,3 +28,19 @@ def transpose_matrix(matrix):
     return np.array(matrix).T.tolist()
 
 
+def solve_system(matrix, vector):
+    solution = np.linalg.solve(
+        np.array(matrix, dtype=float), np.array(vector, dtype=float)
+    )
+    return np.round(solution, 6).tolist()
+
+
+def tensor_channel_mean(tensor):
+    return np.array(tensor, dtype=float).mean(axis=-1).tolist()
+
+
+def point_distance(first, second):
+    distance = np.linalg.norm(
+        np.array(first, dtype=float) - np.array(second, dtype=float)
+    )
+    return round(float(distance), 6)
